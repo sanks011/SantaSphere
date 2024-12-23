@@ -1,0 +1,19 @@
+/* Base button styles */
+.btn-primary {
+    @apply bg-holiday-gold text-holiday-pine px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-holiday-red text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  /* Input fields */
+  .input-field {
+    @apply bg-white/20 text-white placeholder-white/60 p-2 rounded-lg border border-white/10 focus:border-holiday-gold focus:outline-none;
+  }
+  
+  /* Glass card effect */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-xl shadow-xl;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  }

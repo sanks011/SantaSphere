@@ -1,0 +1,93 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './styles/components.css';
+
+/* :root {
+  --holiday-red: #D42F2F;
+  --holiday-green: #0B6E4F;
+  --holiday-gold: #FFB800;
+  --holiday-snow: #F3F4F6;
+  --holiday-pine: #1A472A;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--holiday-pine) 0%, var(--holiday-green) 100%);
+  font-family: 'Inter', sans-serif;
+} */
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 shadow-xl;
+  }
+
+  .btn-primary {
+    @apply bg-holiday-gold text-holiday-pine px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-holiday-red text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105;
+  }
+
+  .input-field {
+    @apply bg-white/20 text-white placeholder-white/60 p-3 rounded-lg border border-white/20 focus:border-holiday-gold focus:ring-2 focus:ring-holiday-gold/50 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-101 hover:shadow-2xl;
+  }
+}
+
+/* Custom Animations */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.memory-card {
+  @apply overflow-hidden rounded-lg shadow-xl transition-all duration-300;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+}
+
+.memory-image-container {
+  @apply relative overflow-hidden;
+}
+
+.memory-image-container::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-b from-transparent to-black/30;
+}
+
+@keyframes lightPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes snow-fall {
+  0% { transform: translateY(-10vh) translateX(0); }
+  100% { transform: translateY(100vh) translateX(20px); }
+}
+/* Background effects */
+.holiday-lights {
+  @apply fixed inset-0 pointer-events-none;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 184, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 40%, rgba(212, 47, 47, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 60%, rgba(11, 110, 79, 0.15) 0%, transparent 50%);
+  animation: lightPulse 8s ease-in-out infinite;
+}
